@@ -7,3 +7,4 @@ function calc(num) {
     count += num;
     numberElement.innerHTML = count;
 }
+
