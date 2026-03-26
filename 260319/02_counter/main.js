@@ -1,17 +1,9 @@
-const numberElement = document.getElementById('number');
-const incrementButton = document.getElementById('increment');
+const numberElement = document.getElementById("number")
 
 let count = 0;
 
-// incrementButton.addEventListener('click', () => {
-//     count++;
-//     numberElement.textContent = count;
-// });
-
-
-incrementButton.onclick = (increment);
-
-function increment() {
-    count++;
-    numberElement.textContent = count;
+numberElement.innerHTML = count;
+function calc(num) {
+    count += num;
+    numberElement.innerHTML = count;
 }
