@@ -12,7 +12,7 @@ function CounterApp() {
       className='counter'
       onClick={()=>setCount((count) => count +1)}
     >
-      sadasdads
+      Count is {count}
     </button>
     </>
   )
