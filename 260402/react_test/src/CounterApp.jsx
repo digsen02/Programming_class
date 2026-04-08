@@ -9,15 +9,9 @@ function CounterApp() {
       <h1>{count}</h1>
       <button onClick={()=>setCount((count) => count +1)}>+</button>
       <button onClick={()=>setCount((count) => count +2)}>+2</button>
-      <button onClick={()=>setCount((count) => count -1)}>-</button>
-    {
-    // <button
-    //   className='counter'
-    //   onClick={()=>setCount((count) => count +1)}
-    // >
-    //   Count is {count}
-    // </button>
-    }
+      <button onClick={()=>setCount((count) => count -1)}>-</button>  
+      <button onClick={()=>setCount(0)}>reset</button>  
+    
     </>
   )
 }
