@@ -1,8 +1,7 @@
 import './todoListApp.css'
-import TodoItemEmpty from '../components/TodoItemEmpty.jsx'
-import Button from '../components/Button.jsx'
-import CheckBox from '../components/CheckBox.jsx'
 import TodoHeader from '../components/TodoHeader.jsx'
+import TodoAdder from '../components/TodoAdder.jsx'
+import TodoList from '../components/TodoList.jsx'
 
 function TodoListApp() {
 
@@ -11,23 +10,9 @@ function TodoListApp() {
         <div className="todo">
             <TodoHeader/>
 
-            <form className="todo__form">
-                <input type="text" name="" id="" className="todo__input" placeholder='할 일을 입력하세요.'/>
-                <Button type="submit" className="todo__button todo__button--add">Add</Button>
-            </form>
+            <TodoAdder/>
 
-            <ul className="todo__list">
-                <TodoItemEmpty/>
-                
-                <li className="todo__item todo__item--complete">
-                    <CheckBox id="1">지각하기</CheckBox>
-
-                    <Button className="todo__button todo__button--edit">➰</Button>
-                    <Button className="todo__button todo__button--delete">❌</Button>
-                </li>
-            </ul>
-
-
+            <TodoList/>
 
         </div>
     )
