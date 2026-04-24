@@ -16,6 +16,20 @@ class Todo {
 function TodoListApp() {
     const[todos, setTodos] = useState([])
     
+    function toggleTodo(id){
+        setTodos((todos) => {
+            return todos.map((todo) =>
+                todo.id === id ? {...todo, isCompleted: !todo.isCompleted} : todo
+            )
+        })
+    }
+
+    function deleteTodo(id) {
+        setTodos((todos) => {
+            return todos.filter((todo) => todo.id !== id)
+        })
+    }
+    
     function addTodo(text) {
         setTodos((todos) => [
             ...todos,
@@ -23,13 +37,24 @@ function TodoListApp() {
         ])
     }
 
+    
+
+    function editTodo(id, newText) {
+        setTodos((todos)=>
+            todos.map((todo)=>
+                todo.id === id ? {...todo, text: newText} : todo
+            )
+        )
+    }
+
+
     return(
         <div className="todo">
             <TodoHeader/>
 
             <TodoAdder addTodo={addTodo} />
 
-            <TodoList/>
+            <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo}/>
 
         </div>
     )

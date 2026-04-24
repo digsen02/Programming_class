@@ -65,6 +65,10 @@
     margin-left: 10px;
 }
 
+.todo__input--edit {
+    flex-grow: 1;
+}
+
 .todo__item--complete .todo__label {
     text-decoration: line-through;
     color: #999;
