@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './todoListApp.css'
-import TodoHeader from '../components/TodoHeader.jsx'
-import TodoAdder from '../components/TodoAdder.jsx'
-import TodoList from '../components/TodoList.jsx'
+import TodoHeader from './components/TodoHeader.jsx'
+import TodoAdder from './components/TodoAdder.jsx'
+import TodoList from './components/TodoList.jsx'
 
 class Todo {
     constructor(text) {
@@ -13,9 +13,22 @@ class Todo {
     }
 }
 
+const TODOS_STORAGE_KEY = "todos";
+
 function TodoListApp() {
-    const[todos, setTodos] = useState([])
+    function initTodos() {
+        const savedTodos = localStorage.getItem(TODOS_STORAGE_KEY);
+        return savedTodos ? JSON.parse(savedTodos) : [];
+    }
+
+    const[todos, setTodos] = useState(initTodos)
     
+    useEffect(() => {
+        //localstorage에 todos 저장하기
+        localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todos));
+
+    }, [todos])
+
     function toggleTodo(id){
         setTodos((todos) => {
             return todos.map((todo) =>
@@ -37,8 +50,6 @@ function TodoListApp() {
         ])
     }
 
-    
-
     function editTodo(id, newText) {
         setTodos((todos)=>
             todos.map((todo)=>
@@ -47,13 +58,10 @@ function TodoListApp() {
         )
     }
 
-
     return(
         <div className="todo">
             <TodoHeader/>
-
             <TodoAdder addTodo={addTodo} />
-
             <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} editTodo={editTodo}/>
 
         </div>

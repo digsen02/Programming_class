@@ -14,3 +14,9 @@ npm create vite@latest .
 - `onClick{함수}`
 
 ### TodoListAPpp
+
+### TodoListApp
+- React Component 분리
+- for -> htmlFor, class -> className
+- props
+- `<input id = {id} value = {} />`, `<lable htmlFor={id} />`

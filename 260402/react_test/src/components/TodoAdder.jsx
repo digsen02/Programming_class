@@ -17,7 +17,6 @@ export default function TodoAdder({addTodo}) {
 
     return (
         <>
-        ``
             <form className="todo__form" onSubmit={handleSubmit}>
                 <input
                     type="text"

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import CheckBox from '../components/CheckBox.jsx'
-import Button from '../components/Button.jsx'
+import CheckBox from './CheckBox.jsx'
+import Button from './Button.jsx'
 
 export default function TodoItem({ todo, toggleTodo, deleteTodo, editTodo }) {
     const [isEditing, setIsEditing] = useState(false);
