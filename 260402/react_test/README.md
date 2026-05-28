@@ -20,3 +20,16 @@ npm create vite@latest .
 - for -> htmlFor, class -> className
 - props
 - `<input id = {id} value = {} />`, `<lable htmlFor={id} />`
+
+- `npm istall react-router-com`
+- ```javascirpt
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={}/>
+        </Routes>
+    </BrowserRouter>
+    ```
+- ```javascirpt
+    <Link to="/"></Link>
+    ```
+- `usernavigate()`
